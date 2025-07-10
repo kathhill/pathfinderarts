@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-
     --color-primary: #3557c1;
     --color-primary-light: #4b6ed4;
     --color-primary-dark: #1a3c8c;
@@ -87,7 +86,6 @@
 }
 
 @layer base {
-
     [data-theme='pathfinder'] {
         --color-primary-emerald: #00b289;
         --color-primary-emerald-light: #1acca3; 
@@ -95,14 +93,14 @@
         --color-primary-sapphire: #0a2a61;
         --color-primary-sapphire-light: #24447b; 
         --color-primary-sapphire-dark: #001148;
-        --color-secondary: #036ea4;
-        --color-secondary-light: #1d88be; 
-        --color-secondary-dark: #00558b; 
+        --color-secondary-topz: #036ea4;
+        --color-secondary-light-topaz: #1d88be; 
+        --color-secondary-dark-topaz: #00558b; 
         --color-accent: #dcf7f0;
-        --color-background: #f8f9ff;// TODO:configure
-        --color-background-light: #eef1ff; // TODO:configure
-        --color-background-dark: #1a1f3c; // TODO:configure
-        --color-headline: #1a1f3c; // TODO:configure
+        --color-background-opal: #dcf7f0;
+        --color-background--opal-light: #f6ffff; 
+        --color-background-opal-dark: #5d7871;
+        --color-headline: var(--color-primary-sapphire);
         --color-headline-light: #1a1f3c; // TODO:configure
         --color-headline-dark: #ffffff; // TODO:configure
         --color-body-base: #1a1f3c; // TODO:configure
