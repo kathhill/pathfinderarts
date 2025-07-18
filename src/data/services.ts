@@ -3,30 +3,30 @@ import { Zap, Shield, Heart, Coffee, Smile, Type, TabletSmartphone, CodeXml } fr
 // Define the LucideIcon type based on the structure of Lucide icons
 type LucideIcon = typeof Zap;
 
-export interface Feature {
+export interface Service {
     icon: LucideIcon;
     title: string;
     description: string;
 }
 
-export interface FeatureList {
+export interface ServicesList {
     id: string;
-    features: Feature[];
+    services: Service[];
 }
 
 // Example feature lists
-export const featureLists: Record<string, FeatureList> = {
+export const servicesLists: Record<string, ServicesList> = {
     main: {
         id: 'main',
-        features: [
+        services: [
             {
                 icon: Zap,
-                title: 'Lightning Fast Performance',
+                title: 'Grant Writing',
                 description: 'Optimized for speed and performance'
             },
             {
                 icon: Shield,
-                title: 'SEO Optimized Structure',
+                title: 'Facilitating Meetings, Trainings, and Conferences',
                 description: 'Built with SEO best practices in mind'
             },
             {
@@ -53,7 +53,7 @@ export const featureLists: Record<string, FeatureList> = {
     },
     secondary: {
         id: 'secondary',
-        features: [
+        services: [
             {
                 icon: Heart,
                 title: 'Made with Love',

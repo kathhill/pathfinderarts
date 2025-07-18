@@ -1,19 +1,47 @@
 @import "tailwindcss";
+/* reference https://www.tailwindshades.com/ for color shades */
 
 @theme {
-    --color-primary: #3557c1;
-    --color-primary-light: #4b6ed4;
-    --color-primary-dark: #1a3c8c;
+    --color-emerald-*: initial;
+    --color-emerald: #00b289;
+    --color-emerald-50: #6bffdd;
+    --color-emerald-100: #56ffd8;
+    --color-emerald-600: #007a5e;
+    --color-emerald-700: #004233;
+    --color-emerald-800: #000a07;
+    --color-sapphire: #0a2a61;
+    --color-sapphire-50: #387aea;
+    --color-sapphire-100: #266de9;
+    --color-sapphire-200: #155ad0;
+    --color-sapphire-600: #05142e;
+    --color-topaz: #036ea4;
+    --color-topaz-50: #62c9fc;
+    --color-topaz-200: #26b4fb;
+    --color-topaz-300: #04a4f4;
+    --color-topaz-600: #02496d;
+    --color-topaz-700: #012436;
+    --color-opal: #dcf7f0;
+    --color-opal-50: #fff;
+    --color-opal-600: #b4cac5;
+    --color-opal-700: #8e9f9a;
+    --color-opal-800: #687371;
+    --color-opal-900: #424746;
+    --color-primary: var(--color-emerald);
+    --color-primary2: var(--color-sapphire);
+    --color-primary-light: var(--color-emerald-50);
+    --color-primary-dark: var(--color-emerald-700); /* maybe change to 700 */
+    --color-primary2-light: var(--color-sapphire-50);
+    --color-primary2-dark: var(--color-sapphire-600);
 
-    --color-secondary: #cc9900;
-    --color-secondary-light: #e6b800;
-    --color-secondary-dark: #997300;
+    --color-secondary: var(--color-topaz);
+    --color-secondary-light: var(--color-topaz-50);
+    --color-secondary-dark: var(--color-topaz-600); /* maybe change to 600 */
 
-    --color-accent: #1e3c8c;
-    --color-background: #f8f9ff;
-    --color-background-light: #eef1ff;
-    --color-background-dark: #1a1f3c;
-    
+    --color-accent: var(--color-opal);
+    --color-background: var(--color-emerald);
+    --color-background-light: var(--color-opal-50);
+    --color-background-dark: var(--color-sapphire);
+        
     --color-headline: #1a1f3c;
     --color-headline-light: #1a1f3c;
     --color-headline-dark: #ffffff;
@@ -22,9 +50,9 @@
     --color-eyebrow-light: #1e3c8c;
     --color-eyebrow-dark: #e6b800;
     
-    --color-body-base: #1a1f3c;
-    --color-body-light: #1a1f3c;
-    --color-body-dark: #ffffff;
+    --color-body-base: var(--color-sapphire-600);
+    --color-body-light: var(--color-sapphire-600);
+    --color-body-dark: var(--color-opal); /*maybe change to opal-50 */
     
     --color-input: var(--color-background-light);
     --color-input-light: var(--color-background-light);
@@ -33,7 +61,7 @@
     --color-input-text-light: var(--color-headline-light);
     --color-input-text-dark: var(--color-headline-dark);
     
-    --color-nav-text: var(--color-body-base);
+    --color-nav-text: var(--color-body-dark);
     --color-nav-text-hover: var(--color-primary);
     --color-nav-text-active: var(--color-primary);
     --color-nav-text-current: var(--color-primary);
@@ -77,32 +105,42 @@
     --border-radius-small: 0.5rem;
     --border-radius-base: 1rem;
     --border-radius-large: 2rem;
+
+    --font-espiritu: 'espiritu', sans-serif;
+    --font-gamay: 'gamay', sans-serif;
+    --font-gamay-wide: 'gamay-wide', sans-serif;
+    --font-base: 'gamay', sans-serif;
+    --font-headline: 'espiritu', sans-serif;
+    --font-eyebrow: var(--font-gamay-wide);
     
-    --font-bruno-ace: 'Bruno Ace SC', sans-serif;
+    /* --font-bruno-ace: 'Bruno Ace SC', sans-serif;
     --font-noto-sans-kr: "Noto Sans KR", sans-serif;
     --font-base: 'Noto Sans KR', sans-serif;
     --font-logo: 'Bruno Ace SC', sans-serif;
-    --font-headline: 'Noto Sans KR', sans-serif;
+    --font-headline: 'Noto Sans KR', sans-serif; */
 }
 
 @layer base {
-    [data-theme='pathfinder'] {
-        --color-primary-emerald: #00b289;
-        --color-primary-emerald-light: #1acca3; 
-        --color-primary-emerald-dark: #009970; 
-        --color-primary-sapphire: #0a2a61;
-        --color-primary-sapphire-light: #24447b; 
-        --color-primary-sapphire-dark: #001148;
-        --color-secondary-topz: #036ea4;
-        --color-secondary-light-topaz: #1d88be; 
-        --color-secondary-dark-topaz: #00558b; 
-        --color-accent: #dcf7f0;
-        --color-background-opal: #dcf7f0;
+    .text-outline-2 {
+        -webkit-text-stroke: 2px var(--color-primary2);
+    }
+   /* [data-theme='pathfinder'] {
+        --color-primary: var(--color-emerald);
+        --color-primary-light: #1acca3; 
+        --color-primary-dark: #009970; 
+        --color-primary2: var(--color-sapphire);
+        --color-primary2-light: #24447b; 
+        --color-primary2-dark: #001148;
+        --color-secondary: var(--color-topaz);
+        --color-secondary-light: #1d88be; 
+        --color-secondary-dark: #00558b; 
+        --color-accent-opal: #dcf7f0;
+        --color-background-opal: var(--color-accent-opal);
         --color-background--opal-light: #f6ffff; 
         --color-background-opal-dark: #5d7871;
         --color-headline: var(--color-primary-sapphire);
-        --color-headline-light: #1a1f3c; // TODO:configure
-        --color-headline-dark: #ffffff; // TODO:configure
+        --color-headline-light: var(--color-headline);
+        --color-headline-dark: var(--color-accent-opal);
         --color-body-base: #1a1f3c; // TODO:configure
         --color-body-light: #1a1f3c; // TODO:configure
         --color-body-dark: #ffffff; // TODO:configure
@@ -488,7 +526,7 @@
         --color-nav-submenu-bg: var(--color-background-light);
         --color-header-logo: var(--color-primary);
         --color-footer-logo: var(--color-primary);
-    }
+    } */
 }
 
 @layer components {
@@ -559,8 +597,9 @@ body {
 }
 
 .hero-background {
-    --s: 34px;
+    /* --s: 34px; /*
     /* control the size*/
+    /*
     --c1: var(--color-primary);
     --c2: var(--color-primary-dark);
 
@@ -573,7 +612,7 @@ body {
         radial-gradient(50% 50% at 0 100%, var(--_g)),
         radial-gradient(50% 50%, var(--_g)),
         radial-gradient(50% 50%, var(--_g)) calc(var(--s)/2) calc(var(--s)/2) var(--c1);
-    background-size: var(--s) var(--s);
+    background-size: var(--s) var(--s); */
 }
 
 /* Style the pre element containing the code */
